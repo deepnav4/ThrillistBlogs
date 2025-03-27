@@ -5,6 +5,9 @@ import { Navigate } from 'react-router-dom';
 import AppBar from '../components/AppBar';
 import { useTheme } from '../context/ThemeContext';
 import Loading from '../components/Loading';
+import { config } from '../config/config';
+const BACKEND_URL = config.BACKEND_URL;
+
 const Blogs = () => {
     const {blogs, loading} = useBlogs();
     const { theme } = useTheme();

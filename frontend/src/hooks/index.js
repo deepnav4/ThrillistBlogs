@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { config } from '../config/config';
 
-const API_URL = "http://localhost:3001";
+const API_URL = config.API_URL;
 
 export const useBlogs = () => {
     const [loading,setLoading] = useState(false);

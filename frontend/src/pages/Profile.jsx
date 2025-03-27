@@ -4,7 +4,8 @@ import AppBar from '../components/AppBar';
 import { FiMail, FiCalendar, FiFileText } from 'react-icons/fi';
 import { Avatar } from '../components/BlogCard';
 import { useTheme } from '../context/ThemeContext';
-const BASE_URL = "http://localhost:3001";
+import { config } from '../config/config';
+const BACKEND_URL = config.BACKEND_URL;
 
 const Profile = () => {
   const navigate = useNavigate();

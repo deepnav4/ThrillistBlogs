@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const JWT_SECRET = "secret";
+require('dotenv').config();
 
 const authMiddleware = (req, res, next) => {
     // Get token from cookies
@@ -12,7 +12,7 @@ const authMiddleware = (req, res, next) => {
     }
     
     try {
-        const decoded = jwt.verify(token, JWT_SECRET);
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
         // Add decoded user info to request object
         req.user = decoded;
         next();

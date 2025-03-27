@@ -1,12 +1,13 @@
 import axios from "axios"
 // import Appbar from "../components/Appbar"
 // import { BACKEND_URL } from "../config"
-const BACKEND_URL = "http://localhost:3001"
 import { useState } from "react"
 import { useNavigate, Navigate } from "react-router-dom"
 import { motion } from "framer-motion"
 import AppBar from "../components/AppBar"
 import { useTheme } from '../context/ThemeContext';
+import { config } from '../config/config';
+const BACKEND_URL = config.BACKEND_URL;
   
 const MarkdownPreview = ({ content, title }) => {
   const formatContent = (content) => {

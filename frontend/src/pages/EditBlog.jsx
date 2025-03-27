@@ -5,7 +5,8 @@ import AppBar from '../components/AppBar';
 import { useTheme } from '../context/ThemeContext';
 import { motion } from 'framer-motion';
 
-const BACKEND_URL = "http://localhost:3001";
+import { config } from '../config/config';
+const BACKEND_URL = config.BACKEND_URL;
 
 // Import MarkdownPreview and TextArea from Publish page
 // You can also move these components to a separate file and import them in both places

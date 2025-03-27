@@ -1,11 +1,10 @@
 const mongoose = require("mongoose");
-const MONGO_URL = "mongodb+srv://workwithdeepnav:hNMSjEuDukkCeOza@cluster0.prvp2.mongodb.net/blogApp"
-
+require('dotenv').config();
 
 exports.connectDB = async () => {
     try {
-        await mongoose.connect(MONGO_URL);
+        await mongoose.connect(process.env.MONGODB_URI);
     } catch (error) {
-        console.log("Error connecting to MongoDB",error);
+        console.log("Error connecting to MongoDB", error);
     }
 }   
