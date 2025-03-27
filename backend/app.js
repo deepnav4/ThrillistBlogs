@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const userRouter = require("./routes/userRoutes.js");
-const blogRouter = require("./routes/blogRoutes.js");
-const { connectDB } = require("./config/db.js");
+const userRouter = require("./src/routes/userRoutes.js");
+const blogRouter = require("./src/routes/blogRoutes.js");
+const { connectDB } = require("./src/config/db.js");
 const cookieParser = require('cookie-parser');
 const path = require('path');
 
