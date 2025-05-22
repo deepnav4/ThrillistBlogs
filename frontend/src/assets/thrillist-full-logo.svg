@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Diamond Logo -->
+  <g>
+    <!-- Outer diamond shape with gradient -->
+    <path 
+      d="M20 2L38 20L20 38L2 20L20 2Z" 
+      fill="url(#gradient-light)" 
+    />
+    
+    <!-- Inner diamond shape -->
+    <path 
+      d="M20 10L30 20L20 30L10 20L20 10Z" 
+      fill="white" 
+    />
+  </g>
+  
+  <!-- Text - Thrillist -->
+  <text x="50" y="25" font-family="sans-serif" font-size="18" font-weight="600" fill="url(#text-gradient)">
+    Thrillist
+  </text>
+  
+  <!-- Subtext - Stories that matter -->
+  <text x="52" y="33" font-family="sans-serif" font-size="6" font-weight="300" letter-spacing="0.2em" fill="#94A3B8" text-transform="uppercase">
+    Stories that matter
+  </text>
+  
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="gradient-light" x1="2" y1="2" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+      <stop stopColor="#818CF8" />
+      <stop offset="1" stopColor="#6366F1" />
+    </linearGradient>
+    
+    <linearGradient id="text-gradient" x1="50" y1="15" x2="120" y2="25" gradientUnits="userSpaceOnUse">
+      <stop stopColor="#818CF8" />
+      <stop offset="0.5" stopColor="#A78BFA" />
+      <stop offset="1" stopColor="#60A5FA" />
+    </linearGradient>
+  </defs>
+</svg> 
