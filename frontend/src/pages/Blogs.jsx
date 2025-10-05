@@ -23,20 +23,22 @@ const Blogs = () => {
         </div>
     }
 
+    // Sort blogs by createdAt in descending order (latest first)
+    const sortedBlogs = blogs ? [...blogs].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)) : [];
+
     return (
         <div className={theme === 'dark' ? 'dark' : ''}>
             <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
                 <AppBar theme={theme} />
-                <div className="max-w-4xl mx-auto px-3 sm:px-4 pt-16 sm:pt-20 md:px-8 lg:px-0 py-4 sm:py-8
-                              ">
-                    {blogs && blogs.length > 0 ? (
-                        blogs.map((blog) => (
+                <div className="max-w-4xl mx-auto px-3 sm:px-4 pt-16 sm:pt-20 md:px-8 lg:px-0 py-4 sm:py-8">
+                    {sortedBlogs.length > 0 ? (
+                        sortedBlogs.map((blog) => (
                             <BlogCard
                                 key={blog._id}
-                                author={blog.author.name} 
-                                title={blog.title} 
-                                content={blog.content} 
-                                createdAt={blog.createdAt} 
+                                author={blog.author.name}
+                                title={blog.title}
+                                content={blog.content}
+                                createdAt={blog.createdAt}
                                 id={blog._id}
                                 theme={theme}
                             />

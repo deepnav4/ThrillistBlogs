@@ -9,16 +9,16 @@ import cookieParser from 'cookie-parser';
 dotenv.config();
 const app = express();
 
+app.use(cors({
+  origin: true,          // Reflect request origin automatically
+  credentials: true,     // Allow cookies / authorization headers
+}));
+
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({
-    origin: process.env.NODE_ENV === 'production' 
-        ? process.env.FRONTEND_URL 
-        : 'http://localhost:5173',
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true
-}));
+
+
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
@@ -41,13 +41,9 @@ connectDB().catch(err => {
     process.exit(1);
 });
 
-// For local development
 if (process.env.NODE_ENV !== 'production') {
     const PORT = process.env.PORT || 3001;
     app.listen(PORT, () => {
         console.log(`Server running on port ${PORT}`);
     });
 }
-
-export default app;
-
